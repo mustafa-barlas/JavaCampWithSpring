@@ -1,19 +1,17 @@
 package kodlama.io.rentACar.entities.concretes;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
-@Table(name = "brands")
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "models")
 @Entity
-public class Brand {
+public class Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +21,8 @@ public class Brand {
     @Column(name = "name")
     private String name;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "brand",  cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<Model> models;
+
+    @ManyToOne()
+    @JoinColumn(name = "brand_id")
+    private Brand brand;
 }

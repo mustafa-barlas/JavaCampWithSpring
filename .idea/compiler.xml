@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="rentACar" target="19" />
+      <module name="rentACar" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
